@@ -4,6 +4,13 @@
   <title>Canvas test</title>
   <style type="text/css">body {margin: 0; padding: 0; overflow: hidden;}</style>
   <script type="text/javascript">
+    var readyId = setInterval(function() {
+      if (document.readyState === "complete") {
+        init()
+        clearInterval(readyId)
+      }
+    }, 10)
+
 /*    function draw() {
       var canvas = document.getElementById('canvas')
       if (canvas.getContext) {
@@ -237,6 +244,6 @@
     }
   </script>
 </head>
-<body onload="init()">
+<body>
 </body>
 </html>
