@@ -142,8 +142,8 @@
 
     function init() {
       canvas = document.createElement('canvas')
-      canvas.width = document.width
-      canvas.height = document.height
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
       document.body.appendChild(canvas)
       if (canvas.getContext) {
         ctx = canvas.getContext('2d')
@@ -178,7 +178,8 @@
 
     function update(objects, canvas, ctx) {
       if (objects.length < COUNT) {
-        for (var i = 0; i < 50; i++) {
+        var toAdd = Math.random() * 50
+        for (var i = 0; i < toAdd; i++) {
           createObj()
         };
       }
